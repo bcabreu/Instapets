@@ -41,6 +41,44 @@ main {
   gap: 3.5rem;
 }
 
+.mobiles_phones {
+  position: relative;
+  width: 36rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.samsung-mobile {
+  z-index: -2;
+}
+
+.iphone-mobile {
+  display: flex;
+  position: absolute;
+  left: 10rem;
+}
+
+.iphone-mobile-photo {
+  position: absolute;
+  animation-name: animation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+.iphone-mobile-photo:nth-child(2) {
+  animation-delay: 5s;
+}
+
+@keyframes animation {
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .sign-in {
   background-color: var(--white);
   border: 1px solid var(--gray-100);
@@ -153,7 +191,7 @@ footer {
 }
 
 .footer-links {
-  width: 40%;
+  width: 60%;
   margin-top: 10rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -172,4 +210,19 @@ footer {
   margin-top: 1rem;
   font-size: 1.2rem;
   color: var(--gray-300);
+}
+
+@media (max-width: 768px) {
+  .mobiles_phones {
+    display: none;
+  }
+
+  .footer-links {
+    width: 80%;
+    line-height: 1.8rem;
+  }
+
+  .footer-links a {
+    font-size: 1rem;
+  }
 }
